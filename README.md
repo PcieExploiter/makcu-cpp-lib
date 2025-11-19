@@ -19,14 +19,6 @@ A production-ready C++20 library for the MAKCU hardware mouse controller, provid
 - C++20 compatible compiler
 - MAKCU hardware device (VID:PID = 1A86:55D3)
 
-## Building
-
-### Visual Studio
-
-1. Open `makcu-cpp-lib.sln` in Visual Studio
-2. Select your configuration (Debug/Release) and platform (x64)
-3. Build the solution (F7 or Build > Build Solution)
-
 The solution contains three projects:
 - **makcu-cpp-lib**: Static library
 - **example**: Simple example program
@@ -202,6 +194,7 @@ See LICENSE file for details.
 ## Credits
 
 Based on the Python implementation: https://github.com/SleepyTotem/makcu-py-lib
+
 
 
 
