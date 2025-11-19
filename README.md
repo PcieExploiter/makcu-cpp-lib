@@ -50,8 +50,6 @@ makcu-cpp-lib/
 ├── examples/
 │   ├── example.cpp            # Simple example
 │   └── makcu_cli.cpp         # Interactive CLI
-├── makcu-cpp-lib.sln         # Visual Studio solution
-└── makcu-cpp-lib.vcxproj     # Visual Studio project
 ```
 
 ## Usage
@@ -204,5 +202,6 @@ See LICENSE file for details.
 ## Credits
 
 Based on the Python implementation: https://github.com/SleepyTotem/makcu-py-lib
+
 
 
