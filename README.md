@@ -83,7 +83,7 @@ int main() {
 }
 ```
 
-### Advanced Features
+### Mouse movement Features
 
 ```cpp
 // Smooth movement
@@ -204,4 +204,5 @@ See LICENSE file for details.
 ## Credits
 
 Based on the Python implementation: https://github.com/SleepyTotem/makcu-py-lib
+
 
