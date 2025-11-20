@@ -188,11 +188,12 @@ Exiting...
 
 ## License
 
-See LICENSE file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ## Credits
 
 Based on the Python implementation: https://github.com/SleepyTotem/makcu-py-lib
+
 
 
 
