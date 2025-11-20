@@ -7,7 +7,7 @@ A production-ready C++20 library for the MAKCU hardware mouse controller, provid
 ## Features
 
 - **High-Performance Mouse Control**: Direct hardware communication via serial port at 4Mbps
-- **Low Latency**: ~0.04ms response time vs ~1-2ms for Windows API
+- **Low Latency**: ~0.04ms response time
 - **Full Mouse Control**: Movement, clicks, scrolling, button locking
 - **Auto-Detection**: Automatically finds MAKCU device on COM ports
 - **Thread-Safe**: Safe for use in multi-threaded applications
@@ -193,6 +193,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## Credits
 
 Based on the Python implementation: https://github.com/SleepyTotem/makcu-py-lib
+
 
 
 
