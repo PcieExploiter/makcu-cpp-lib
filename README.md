@@ -2,7 +2,7 @@
 
 A production-ready C++20 library for the MAKCU hardware mouse controller, providing high-performance mouse input with sub-millisecond latency.
 
-**Version:** 1.0.0
+**Version:** 1.0.1
 
 ## Features
 
@@ -17,7 +17,6 @@ A production-ready C++20 library for the MAKCU hardware mouse controller, provid
 - Windows 10/11
 - Visual Studio 2019 or later (Community Edition supported)
 - C++20 compatible compiler
-- MAKCU hardware device (VID:PID = 1A86:55D3)
 
 The solution contains three projects:
 - **makcu-cpp-lib**: Static library
@@ -194,6 +193,7 @@ See LICENSE file for details.
 ## Credits
 
 Based on the Python implementation: https://github.com/SleepyTotem/makcu-py-lib
+
 
 
 
