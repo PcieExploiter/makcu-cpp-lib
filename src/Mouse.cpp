@@ -79,7 +79,7 @@ void Mouse::moveOptimized(int x, int y) {
     // The MAKCU device will interpolate movements on-chip for smoother output
     if (distance > 10.0f) {
         // Use more segments for larger movements
-        const int segments = std::min(static_cast<int>(distance / 20.0f) + 2, 10);
+        const int segments = std::clamp(static_cast<int>(distance / 20.0f) + 2, 2, 10);
         moveSmooth(x, y, segments);
     } else {
         // For small movements, use instant move to reduce latency
