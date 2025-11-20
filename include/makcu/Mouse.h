@@ -23,9 +23,12 @@ public:
     void click(MouseButton button);
 
     void move(int x, int y);
-    void moveSmooth(int x, int y, int segments);
+    void moveSmooth(int x, int y, int segments = 5);
     void moveBezier(int x, int y, int segments, int ctrlX, int ctrlY);
     void moveAbs(std::pair<int, int> target, int speed = 1, int waitMs = 2);
+    
+    // Optimized move with automatic smoothing based on distance
+    void moveOptimized(int x, int y);
 
     void scroll(int delta);
 

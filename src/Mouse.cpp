@@ -66,6 +66,27 @@ void Mouse::moveSmooth(int x, int y, int segments) {
     transport_.sendCommand(cmd.str());
 }
 
+void Mouse::moveOptimized(int x, int y) {
+    // Skip very small movements to reduce command overhead
+    if (std::abs(x) <= 0 && std::abs(y) <= 0) {
+        return;
+    }
+    
+    // Calculate movement distance
+    const float distance = std::sqrt(static_cast<float>(x * x + y * y));
+    
+    // Use hardware-accelerated smooth movement for larger distances
+    // The MAKCU device will interpolate movements on-chip for smoother output
+    if (distance > 10.0f) {
+        // Use more segments for larger movements
+        const int segments = std::min(static_cast<int>(distance / 20.0f) + 2, 10);
+        moveSmooth(x, y, segments);
+    } else {
+        // For small movements, use instant move to reduce latency
+        move(x, y);
+    }
+}
+
 void Mouse::moveBezier(int x, int y, int segments, int ctrlX, int ctrlY) {
     std::ostringstream cmd;
     cmd << "km.move(" << x << "," << y << "," << segments 

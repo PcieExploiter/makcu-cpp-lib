@@ -179,7 +179,7 @@ public:
         timeouts.ReadIntervalTimeout = 0;
         timeouts.ReadTotalTimeoutConstant = 1;
         timeouts.ReadTotalTimeoutMultiplier = 0;
-        timeouts.WriteTotalTimeoutConstant = 10;
+        timeouts.WriteTotalTimeoutConstant = 1; // Reduced from 10ms to 1ms for lower latency
         timeouts.WriteTotalTimeoutMultiplier = 0;
         
         if (!SetCommTimeouts(hSerial_, &timeouts)) {
@@ -288,7 +288,11 @@ public:
             throw MakcuConnectionError("Failed to write to serial port");
         }
         
-        FlushFileBuffers(hSerial_);
+        // Only flush for critical commands, not for rapid mouse movements
+        // This significantly reduces latency for high-frequency move commands
+        if (expectResponse || cmd.find("km.move") == std::string::npos) {
+            FlushFileBuffers(hSerial_);
+        }
         
         if (expectResponse) {
             Sleep(static_cast<DWORD>(timeoutSeconds * 1000));
